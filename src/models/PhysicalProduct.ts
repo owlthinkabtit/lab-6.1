@@ -20,4 +20,13 @@ export class PhysicalProduct extends Product implements DiscountableProduct {
   getPriceWithTax(): number {
     return this.price * 1.1;
   }
+
+  applyBulkDiscount(): void {
+    if (this.quantity >= 5) {
+      this.applyDiscount(15);
+    }
+    if (this.weight >= 10) {
+      this.applyDiscount(20);
+    }
+  }
 }
